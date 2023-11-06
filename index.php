@@ -1,8 +1,8 @@
 <?php 
 
+include_once __DIR__ . '/Models/Movie.php';
 require_once __DIR__ . '/db/db.php';
 
-include_once __DIR__ . '/Models/Movie.php';
 
 ?>
 
