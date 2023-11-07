@@ -1,27 +1,19 @@
 <?php
 
-// 1. creo una nuova classe movie con le relative proprietà
+// This is the Movie class that extends the Production class.
 
-class Movie {
+class Movie extends Production{
 
-  public $title;
-  public $year;
-  public $description;
-  public $language;
-  public $cover;
-  public $extra;
+  public $published_year;
+  public $running_time;
 
-  public function __construct(string $_title, int $_year, string $_description, string $_language, string $_cover = null,  string $_extra){
-    $this->title = $_title;
-    $this->year = $_year;
-    $this->description = $_description;
-    $this->language = $_language;
-    $this->cover = $_cover;
-    $this->extra = $_extra;
-  }
 
-  public function getExtra(){
-    return $this->extra;
+  public function __construct(string $_title, string $_description, string $_language, string $_cover = null,  string $_extra, int $_published_year, int $_running_time){
+    $this->published_year = $_published_year;
+    $this->running_time = $_running_time;
+
+    parent::__construct($_title, $_description, $_language, $_cover, $_extra);
+
   }
 
 }
