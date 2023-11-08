@@ -1,13 +1,14 @@
 <?php 
 //  import traits 
-
-include_once __DIR__ . '/Traits/Language.php';
-
-include_once __DIR__ . '/Models/Production.php';
-include_once __DIR__ . '/Models/Movie.php';
-include_once __DIR__ . '/Models/TvSerie.php';
-require_once __DIR__ . '/db/db.php';
-
+try {
+  include_once __DIR__ . '/Traits/Language.php';
+  include_once __DIR__ . '/Models/Production.php';
+  include_once __DIR__ . '/Models/Movie.php';
+  include_once __DIR__ . '/Models/TvSerie.php';
+  require_once __DIR__ . '/db/db.php';
+} catch (Exception $e) {
+  $error = $e->getMessage();
+};
 
 ?>
 
@@ -23,6 +24,14 @@ require_once __DIR__ . '/db/db.php';
   <title>Production</title>
 </head>
 <body class="bg-warning">
+
+    <?php  if(isset($error)): ?>
+
+    <div class="alert alert-danger m-5" role="alert">
+      <?php echo $error ?>
+    </div>
+
+    <?php else: ?>
 
     <div class="container py-5">
 
@@ -54,7 +63,7 @@ require_once __DIR__ . '/db/db.php';
       </div>
   
     </div>
-        
+        <?php endif; ?>
   </body>
 
 </html>
