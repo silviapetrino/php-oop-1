@@ -9,13 +9,13 @@ class TvSerie extends Production{
   public $number_of_episodes;
   public $number_of_seasons;
 
-  public function __construct(string $_title, string $_description, string $_language, string $_cover = null,  string $_extra, int $_aired_from_year, int $_aired_to_year, int $_number_of_episodes, int $_number_of_seasons) {
+  public function __construct(string $_title, string $_original_language, array $_main_languages, string $_description, string $_cover = null,  string $_extra, int $_aired_from_year, int $_aired_to_year, int $_number_of_episodes, int $_number_of_seasons) {
     $this->aired_from_year = $_aired_from_year;
     $this->aired_to_year = $_aired_to_year;
     $this->number_of_episodes = $_number_of_episodes;
     $this->number_of_seasons = $_number_of_seasons;
 
-    parent::__construct($_title, $_description, $_language, $_cover, $_extra);
+    parent::__construct($_title, $_original_language, $_main_languages, $_description, $_cover, $_extra);
   }
 
 }

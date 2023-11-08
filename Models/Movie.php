@@ -8,11 +8,11 @@ class Movie extends Production{
   public $running_time;
 
 
-  public function __construct(string $_title, string $_description, string $_language, string $_cover = null,  string $_extra, int $_published_year, int $_running_time){
+  public function __construct(string $_title, string $_original_language, array $_main_languages, string $_description, string $_cover = null,  string $_extra, int $_published_year, int $_running_time){
     $this->published_year = $_published_year;
     $this->running_time = $_running_time;
 
-    parent::__construct($_title, $_description, $_language, $_cover, $_extra);
+    parent::__construct($_title, $_original_language, $_main_languages, $_description, $_cover, $_extra);
 
   }
 

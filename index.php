@@ -1,4 +1,7 @@
 <?php 
+//  import traits 
+
+include_once __DIR__ . '/Traits/Language.php';
 
 include_once __DIR__ . '/Models/Production.php';
 include_once __DIR__ . '/Models/Movie.php';
@@ -8,6 +11,8 @@ require_once __DIR__ . '/db/db.php';
 
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,33 +20,32 @@ require_once __DIR__ . '/db/db.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <title>products</title>
+  <title>Production</title>
 </head>
 <body class="bg-warning">
 
-    <div class="container my-3">
+    <div class="container py-5">
 
       <div class="row justify-content-around">
 
-      <h3 class="my-5">Here are some films based on the book 'Charlie and the Chocolate Factory' written by Roald Dahl, and also some other similar TV shows.</h3>
+      <h3 class="my-3">Here are some films based on the book 'Charlie and the Chocolate Factory' written by Roald Dahl, and also some other similar TV shows:</h3>
 
       <?php foreach($productions as $product): ?>
-        <div class="card my-2" style="width: 18rem;">
+        <div class="card my-2 p-2" style="width: 18rem;">
           <img class="card-img-top w-100 h-100 object-fit-cover" src="img/<?php echo $product->cover?>" alt="<?php echo $product->title?>">
           <div class="card-body">
             <h5 class="card-title fw-bold "><?php echo $product->title ?></h5>
             <p><?php echo $product->published_year ?? $product->aired_from_year . ' - ' . $product->aired_to_year  ?></p>
-            <p>Language: <?php echo $product->language?></p>
-            <p class="card-text"><?php echo $product->description?></p>
+            <p><span class="fw-bold">Orginal language:</span> <?php echo $product->original_language?></p>
+            <p><span class="fw-bold">Main languages:</span> <?php echo implode(', ', $product->main_languages)?></p>
+            <p class="card-text"><span class="fw-bold">Description: </span><?php echo $product->description?></p>
 
             <span class="d-block pb-1">
-              <?php echo isset($product->running_time) ? 'Running time: ' . $product->running_time : ' Number of episodes: ' . $product->number_of_episodes ?>
+              <?php echo isset($product->running_time) ? 'Running time: ' . $product->running_time . ' min' : ' Number of episodes: ' . $product->number_of_episodes ?>
             </span>
             <span class="d-block pb-1">
               <?php echo isset($product->number_of_seasons) ? 'Number of seasons ' . $product->number_of_seasons : '  ' ?>
             </span>
-
-
 
             <button class="btn btn-warning">More info: <?php echo $product->getExtra()?></button>
           </div>

@@ -4,16 +4,18 @@
 
 class Production {
 
+  use language; 
+
   public $title;
   public $description;
-  public $language;
   public $cover;
   public $extra;
 
-  public function __construct(string $_title, string $_description, string $_language, string $_cover = null,  string $_extra){
+  public function __construct(string $_title, string $_original_language, array $_main_languages, string $_description, string $_cover = null,  string $_extra){
     $this->title = $_title;
+    $this->original_language = $_original_language;
+    $this->main_languages = $_main_languages;
     $this->description = $_description;
-    $this->language = $_language;
     $this->cover = $_cover;
     $this->extra = $_extra;
   }
