@@ -40,7 +40,7 @@ try {
       <h2 class="my-3">Your movies and Tv shows:</h2>
 
       <?php foreach($productions as $product): ?>
-        <div class="card my-2 p-2" style="width: 18rem;">
+        <div class="card p-2" style="width: 18rem;">
           <img class="card-img-top w-100 h-100 object-fit-cover" src="img/<?php echo $product->cover?>" alt="<?php echo $product->title?>">
           <div class="card-body">
             <h5 class="card-title fw-bold "><?php echo $product->title ?></h5>
