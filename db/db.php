@@ -1,6 +1,6 @@
 <?php
 
-// 2. creo un array con istanze della classe Movie
+// 2. An array with instances of the Movie/TvSerie class.
 
 $productions = [
   new Movie('Willy Wonka & the Chocolate Factory', 'A fantastical musical film based on Roald Dahl \' s book. Gene Wilder plays the role of Willy Wonka, the eccentric owner of the chocolate factory, who opens its doors to a group of contest-winning children.', 'English', 'willy-wonka-the-chocolate-factory_a24690.jpg', 'extra extra extra', 1971, 100),
