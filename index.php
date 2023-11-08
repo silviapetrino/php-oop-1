@@ -13,7 +13,6 @@ try {
 ?>
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,9 +20,10 @@ try {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link href="./css/style.css" rel="stylesheet">
   <title>Production</title>
 </head>
-<body class="bg-warning">
+<body>
 
     <?php  if(isset($error)): ?>
 
@@ -37,7 +37,7 @@ try {
 
       <div class="row justify-content-around">
 
-      <h3 class="my-3">Here are some films based on the book 'Charlie and the Chocolate Factory' written by Roald Dahl, and also some other similar TV shows:</h3>
+      <h2 class="my-3">Your movies and Tv shows:</h2>
 
       <?php foreach($productions as $product): ?>
         <div class="card my-2 p-2" style="width: 18rem;">
