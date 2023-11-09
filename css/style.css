@@ -13,3 +13,7 @@ h2 {
   transform: scale(1.1);
   z-index: 1;
 }
+
+.choose {
+  width: 20%;
+}
